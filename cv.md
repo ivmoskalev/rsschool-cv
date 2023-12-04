@@ -2,7 +2,6 @@
 
 Junior Frontend Developer
 
-
 ## Contact
 
 **Location:** Almaty, Kazakhstan\
@@ -17,12 +16,12 @@ I'm a frontend developer delving into HTML, CSS, and JavaScript. My focus is on 
 
 ## Skills
 
-* HTML
-* CSS (Bootstrap, SASS)
-* JavaScript
-* Python
-* Git (GitHub, GitLab)
-* Figma
+- HTML
+- CSS (Bootstrap, SASS)
+- JavaScript
+- Python
+- Git (GitHub, GitLab)
+- Figma
 
 ## Code Examples
 
@@ -35,17 +34,17 @@ function getCountOfOddNumbers(number) {
 
 ## Education
 
-* **Master, Altai State University**
-  * Faculty of Mathematics and IT
-* **FreeCodeCamp**
-  * Responsive Web Design
-  * JavaScript Algorithms and Data Structures
-* **W3Schools**
-  * HTML
-  * CSS
-  * SASS
+- **Master, Altai State University**
+  - Faculty of Mathematics and IT
+- **FreeCodeCamp**
+  - Responsive Web Design
+  - JavaScript Algorithms and Data Structures
+- **W3Schools**
+  - HTML
+  - CSS
+  - SASS
 
 ## Languages
 
-* **Russian** - native speaker.
-* **English** - A2  [EPAM English test](https://examinator.epam.com/Main/PersonalAssignments)
+- **Russian** - native speaker.
+- **English** - A2 [EPAM English test](https://examinator.epam.com/Main/PersonalAssignments)
