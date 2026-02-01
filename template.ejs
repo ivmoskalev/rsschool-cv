@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV: <%= name %></title>
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/print.css" media="print">
+</head>
+<body>
+    <div class="cv-document">
+      <div class="top-line"></div>
+      <header class="header-section">
+        <div class="header-content">
+          <h1 class="your-name"><%= name %></h1>
+          <h2 class="your-title"><%= title %></h2>
+        </div>
+        <div class="avatar-container">
+          <img alt="Avatar" class="avatar-image" src="<%= typeof avatarUrl !== 'undefined' ? avatarUrl : 'assets/icons/user-solid.svg' %>" />
+        </div>
+      </header>
+      <main class="cv-main-content">
+        <div class="experience-education">
+          <section>
+            <h2 class="section-category">About</h2>
+            <div class="about"><%- about %></div>
+          </section>
+          <section>
+            <h2 class="section-category">Experience</h2>
+            <% if (experience && experience.length) { %>
+              <% experience.forEach(job => { %>
+              <div class="job">
+                <h3 class="job-title"><%= job.title %></h3>
+                <p class="enterprise-name"><%= job.company %></p>
+                <p class="job-date"><%= job.date %></p>
+                <div class="job-description"><%- job.description %></div>
+              </div>
+              <% }); %>
+            <% } %>
+          </section>
+          <section>
+            <h2 class="section-category">Education</h2>
+             <% if (education && education.length) { %>
+               <% education.forEach(edu => { %>
+              <div class="education-item">
+                <h3 class="degree-title"><%= edu.degree %></h3>
+                <p class="school-name"><%= edu.school %></p>
+                <p class="degree-date"><%= edu.faculty %></p>
+              </div>
+              <% }); %>
+            <% } %>
+          </section>
+        </div>
+        <aside class="contact-info">
+          <div class="skills-section">
+            <h3 class="section-title">Contacts</h3>
+            <% if (contacts && contacts.email) { %>
+            <div class="contact-item">
+              <img class="contact-icon" src="assets/icons/envelope-solid.svg" alt="Email icon">
+              <p><%= contacts.email %></p>
+            </div>
+            <% } %>
+            <% if (contacts && contacts.phone) { %>
+              <div class="contact-item">
+                <img class="contact-icon" src="assets/icons/phone-solid.svg" alt="Phone icon">
+                <p><a href="<%= contacts.phone %>"><%= contacts.phone.replace('tel:', '') %></a></p>
+              </div>
+            <% } %>
+            <% if (contacts && contacts.location) { %>
+             <div class="contact-item">
+              <img class="contact-icon" src="assets/icons/location-dot-solid.svg" alt="Location icon">
+              <p><%= contacts.location %></p>
+            </div>
+            <% } %>
+            <% if (contacts && contacts.telegram) { %>
+            <div class="contact-item">
+              <img class="contact-icon" src="assets/icons/paper-plane-solid.svg" alt="Telegram icon">
+              <a href="<%= contacts.telegram %>"><%= contacts.telegram.split('/').pop() %></a>
+            </div>
+            <% } %>
+            <% if (contacts && contacts.whatsapp) { %>
+            <div class="contact-item">
+              <img class="contact-icon" src="assets/icons/whatsapp.svg" alt="WhatsApp icon">
+              <a href="<%= contacts.whatsapp %>"><%= contacts.whatsapp.split('/').pop() %></a>
+            </div>
+            <% } %>
+            <% if (contacts && contacts.linkedin) { %>
+            <div class="contact-item">
+              <img class="contact-icon" src="assets/icons/linkedin-in.svg" alt="LinkedIn icon">
+              <a href="<%= contacts.linkedin %>">LinkedIn</a>
+            </div>
+            <% } %>
+            <% if (contacts && contacts.github) { %>
+            <div class="contact-item">
+              <img class="contact-icon" src="assets/icons/github.svg" alt="GitHub icon">
+              <a href="<%= contacts.github %>"><%= contacts.github.split('/').pop() %></a>
+            </div>
+            <% } %>
+          </div>
+
+          <div class="skills-section">
+            <h3 class="section-title">Technical Skills</h3>
+            <ul>
+              <% if (skills && skills.length) { %>
+                <% skills.forEach(skill => { %>
+                <li>
+                  <strong><%= skill.category %>:</strong>
+                  <ul>
+                    <% skill.items.forEach(item => { %>
+                      <li><%= item %></li>
+                    <% }); %>
+                  </ul>
+                </li>
+                <% }); %>
+              <% } %>
+            </ul>
+            <h3 class="section-title">Spoken Languages</h3>
+            <ul>
+              <% if (languages && languages.length) { %>
+                <% languages.forEach(lang => { %>
+                <li><%= lang %></li>
+                 <% }); %>
+              <% } %>
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+</body>
+</html>

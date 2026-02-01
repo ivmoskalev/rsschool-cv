@@ -1,0 +1,29 @@
+/* print.css */
+@media print {
+    body {
+        font-size: 10pt;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .cv-document {
+        box-shadow: none;
+        border: none;
+    }
+
+    .top-line {
+        background-color: #333 !important; /* Ensure colors are printed */
+    }
+
+    .social-links {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .job-description, .about, .education-item {
+        page-break-inside: avoid;
+    }
+}
